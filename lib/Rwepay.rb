@@ -36,7 +36,7 @@ module Rwepay
           :appkey    => @configs[:app_key],
           :noncestr  => final_params[:nonceStr],
           :package   => final_params[:package],
-          :timestamp => final_params[:timeStamp],
+          :timestamp => final_params[:timeStamp]
       )
       final_params.to_json
     end
