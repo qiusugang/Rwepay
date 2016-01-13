@@ -115,7 +115,7 @@ module Rwepay::Common
     md5_signed_string
   end
 
-  def self.send_deliver_notify(options = {}, access_token)
+  def self.send_deliver_notify(options = {}, access_token = '')
     for_sign_data = {
         :appid             => options[:app_id],
         :appkey            => options[:app_key],
@@ -157,7 +157,7 @@ module Rwepay::Common
 
   end
 
-  def self.get_order_query(options = {}, access_token)
+  def self.get_order_query(options = {}, access_token = '')
     package = "out_trade_no=#{options[:out_trade_no]}&partner=#{options[:partner_id]}"
     md5_package_sign = md5_sign "#{package}&key=#{options[:partner_key]}"
     for_sign_data = {
